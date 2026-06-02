@@ -1,1003 +1,968 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trust PDI – Best Pre-Delivery Inspection Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="Trust PDI – India's Most Trusted Car Pre-Delivery Inspection Service. 350+ checkpoints, certified experts, Delhi NCR & beyond.">
+<title>Trust PDI – India's Most Trusted Pre-Delivery Inspection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --red: #f80606;
-    --red-dark: #b81c1f;
-    --gold: #D4A017;
-    --dark: #0f0f0f;
-    --darker: #080808;
-    --charcoal: #1a1a1a;
-    --surface: #212121;
-    --surface2: #2c2c2c;
-    --text: #f5f5f5;
-    --muted: #aaa;
-    --wa: #25D366;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--text); overflow-x: hidden; }
+/* ═══════════════════════ CSS VARIABLES ═══════════════════════ */
+:root{
+  --bg:#060A14;
+  --bg2:#0A1020;
+  --bg3:#0E1628;
+  --surf:#111D35;
+  --surf2:#162340;
+  --blue:#3B7BFF;
+  --blue-l:#6FA3FF;
+  --blue-d:#1A56DB;
+  --cyan:#00D4FF;
+  --gold:#F4A623;
+  --gold-l:#FFC95A;
+  --green:#00C98A;
+  --red:#FF4D6A;
+  --text:#EFF4FF;
+  --muted:#8899BB;
+  --muted2:#4A5A78;
+  --wa:#25D366;
+  --border:rgba(59,123,255,0.12);
+  --border2:rgba(59,123,255,0.28);
+  --border3:rgba(59,123,255,0.45);
+  --font:'Plus Jakarta Sans',sans-serif;
+  --display:'Bebas Neue',sans-serif;
+  --nav-h:70px;
+  --ticker-h:36px;
+}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+html{font-size:16px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    background: rgba(10,10,10,0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(232,38,42,0.3);
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5%;
-    height: 68px;
-  }
-  .logo-box {
-    display: flex; align-items: center; gap: 12px;
-    text-decoration: none;
-  }
-  .logo-icon {
-    width: 46px; height: 46px;
-    background: var(--red);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px; color: white;
-    letter-spacing: 1px;
-  }
-  .logo-text { line-height: 1.1; }
-  .logo-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 26px; letter-spacing: 3px;
-    color: white;
-  }
-  .logo-sub { font-size: 10px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+/* scrollbar */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px}
 
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; letter-spacing: .5px; }
-  .nav-links a:hover { color: white; }
-  .nav-cta {
-    background: var(--red); color: white;
-    padding: 10px 22px; border-radius: 8px;
-    text-decoration: none; font-weight: 600; font-size: 14px;
-    transition: background .2s, transform .1s;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .nav-cta:hover { background: var(--red-dark); transform: translateY(-1px); }
+/* ═══════════════════════ UTILITY ═══════════════════════ */
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:var(--blue-l);font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
+.tag::before{content:'';width:20px;height:2px;border-radius:1px;background:linear-gradient(90deg,var(--blue),var(--cyan));flex-shrink:0}
+.sec-h{font-family:var(--display);font-size:clamp(36px,5vw,68px);letter-spacing:1px;line-height:1;margin-bottom:16px;color:var(--text)}
+.sec-sub{color:var(--muted);font-size:clamp(14px,1.5vw,16px);line-height:1.8;max-width:520px}
+.gradient-text{background:linear-gradient(135deg,var(--blue-l),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-  /* TICKER */
-  .ticker {
-    background: var(--red); overflow: hidden;
-    padding: 9px 0; margin-top: 68px;
-    white-space: nowrap;
-  }
-  .ticker-inner {
-    display: inline-block;
-    animation: ticker 30s linear infinite;
-    font-size: 13px; font-weight: 500; letter-spacing: .5px; color: white;
-  }
-  @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+/* ═══════════════════════ NAV ═══════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:var(--nav-h);
+  background:rgba(6,10,20,0.92);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;
+}
+.nav-inner{
+  width:100%;max-width:1200px;margin:0 auto;
+  padding:0 clamp(16px,4vw,48px);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+/* LOGO */
+.logo{display:flex;align-items:center;gap:0;text-decoration:none;flex-shrink:0}
+.logo img{height:48px;width:auto;object-fit:contain}
+.nav-links{display:flex;gap:clamp(16px,2vw,28px);list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;letter-spacing:.3px}
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  display:flex;align-items:center;gap:8px;flex-shrink:0;
+  background:linear-gradient(135deg,#0C4BDB,var(--blue));
+  color:#fff;padding:9px 18px;border-radius:10px;text-decoration:none;
+  font-weight:700;font-size:13px;
+  box-shadow:0 4px 16px rgba(59,123,255,0.32);
+  transition:all .2s;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(59,123,255,0.5)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;flex-shrink:0}
+.ham span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-  /* HERO */
-  .hero {
-    min-height: 94vh;
-    background: linear-gradient(135deg, #0f0f0f 0%, #1a0000 50%, #0f0f0f 100%);
-    display: grid; grid-template-columns: 1fr 1fr;
-    align-items: center; padding: 0 6% 0 6%;
-    gap: 40px; position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 60% 50%, rgba(232,38,42,0.12) 0%, transparent 65%);
-    pointer-events: none;
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(232,38,42,0.15); border: 1px solid rgba(232,38,42,0.4);
-    padding: 6px 16px; border-radius: 100px; margin-bottom: 24px;
-    font-size: 12px; color: #ff7878; font-weight: 500; letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  .hero-badge::before { content: '●'; color: var(--red); font-size: 8px; }
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 7vw, 88px);
-    line-height: .95; letter-spacing: 2px;
-    margin-bottom: 20px;
-  }
-  .hero h1 span { color: var(--red); display: block; }
-  .hero p {
-    color: var(--muted); font-size: 16px; line-height: 1.7;
-    max-width: 480px; margin-bottom: 36px;
-  }
-  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--red); color: white;
-    padding: 14px 28px; border-radius: 10px;
-    text-decoration: none; font-weight: 700; font-size: 15px;
-    display: flex; align-items: center; gap: 10px;
-    transition: background .2s, transform .15s;
-  }
-  .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
-  .btn-secondary {
-    background: transparent; color: white;
-    border: 1px solid rgba(255,255,255,0.25);
-    padding: 14px 28px; border-radius: 10px;
-    text-decoration: none; font-weight: 600; font-size: 15px;
-    display: flex; align-items: center; gap: 10px;
-    transition: border-color .2s, transform .15s;
-  }
-  .btn-secondary:hover { border-color: white; transform: translateY(-2px); }
-  .hero-right {
-    display: flex; flex-direction: column; gap: 16px;
-    position: relative;
-  }
-  .hero-visual {
-    background: var(--surface);
-    border: 1px solid rgba(232,38,42,0.25);
-    border-radius: 20px; padding: 36px 32px;
-    text-align: center; position: relative;
-  }
-  .hero-price {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 72px; color: var(--red); line-height: 1;
-  }
-  .hero-price-label { color: var(--muted); font-size: 13px; margin-top: 4px; }
-  .checkpoints-row {
-    display: flex; gap: 12px;
-  }
-  .cp-card {
-    flex: 1; background: var(--surface2);
-    border-radius: 14px; padding: 20px 16px; text-align: center;
-    border: 1px solid rgba(255,255,255,0.06);
-  }
-  .cp-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 40px; color: var(--gold); line-height: 1;
-  }
-  .cp-lbl { color: var(--muted); font-size: 12px; margin-top: 4px; }
+/* Mobile Nav */
+.mob-menu{
+  display:none;position:fixed;top:var(--nav-h);left:0;right:0;
+  z-index:999;background:rgba(6,10,20,0.98);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);flex-direction:column;padding:8px 0 16px;
+}
+.mob-menu a{
+  display:block;color:var(--muted);text-decoration:none;
+  font-size:15px;font-weight:500;
+  padding:13px clamp(16px,4vw,48px);
+  border-bottom:1px solid rgba(255,255,255,0.04);transition:all .2s;
+}
+.mob-menu a:hover{color:#fff;background:rgba(59,123,255,0.06)}
+.mob-cta{
+  background:linear-gradient(135deg,#0C4BDB,var(--blue))!important;
+  color:#fff!important;text-align:center;
+  margin:12px clamp(16px,4vw,48px) 0;border-radius:10px;
+  font-weight:700!important;border-bottom:none!important;
+  padding:13px 20px!important;
+}
 
-  /* STATS */
-  .stats-bar {
-    background: var(--surface);
-    border-top: 1px solid rgba(255,255,255,0.07);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    display: flex; justify-content: space-around;
-    padding: 28px 5%;
-    flex-wrap: wrap; gap: 20px;
-  }
-  .stat { text-align: center; }
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 42px; color: var(--red); line-height: 1;
-  }
-  .stat-lbl { color: var(--muted); font-size: 13px; margin-top: 4px; }
+/* ═══════════════════════ TICKER ═══════════════════════ */
+.ticker-wrap{
+  position:fixed;top:var(--nav-h);left:0;right:0;z-index:998;
+  height:var(--ticker-h);overflow:hidden;
+  background:var(--blue-d);
+  border-bottom:1px solid rgba(59,123,255,0.3);
+}
+.ticker-wrap::before,.ticker-wrap::after{
+  content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;
+}
+.ticker-wrap::before{left:0;background:linear-gradient(90deg,var(--blue-d),transparent)}
+.ticker-wrap::after{right:0;background:linear-gradient(270deg,var(--blue-d),transparent)}
+.ticker-track{
+  display:inline-flex;align-items:center;height:100%;
+  white-space:nowrap;animation:ticker 40s linear infinite;
+  font-size:12.5px;font-weight:600;color:rgba(255,255,255,0.95);letter-spacing:.4px;
+}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-track .sep{margin:0 14px;opacity:.5}
 
-  /* SECTION COMMON */
-  section { padding: 90px 6%; }
-  .section-tag {
-    font-size: 12px; color: var(--red); font-weight: 600;
-    letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 5vw, 60px);
-    line-height: 1; margin-bottom: 16px; letter-spacing: 1px;
-  }
-  .section-sub { color: var(--muted); font-size: 16px; max-width: 520px; line-height: 1.7; }
+/* ═══════════════════════ PAGE OFFSET ═══════════════════════ */
+body{padding-top:calc(var(--nav-h) + var(--ticker-h))}
 
-  /* WHY CHOOSE */
-  .features-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px; margin-top: 50px;
-  }
-  .feat-card {
-    background: var(--surface);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 16px; padding: 28px 24px;
-    transition: border-color .25s, transform .25s;
-    position: relative; overflow: hidden;
-  }
-  .feat-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: var(--red); transform: scaleX(0); transform-origin: left;
-    transition: transform .3s;
-  }
-  .feat-card:hover { border-color: rgba(232,38,42,0.4); transform: translateY(-4px); }
-  .feat-card:hover::before { transform: scaleX(1); }
-  .feat-icon {
-    width: 52px; height: 52px; border-radius: 12px;
-    background: rgba(232,38,42,0.1); border: 1px solid rgba(232,38,42,0.3);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px; margin-bottom: 18px;
-  }
-  .feat-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
-  .feat-card p { color: var(--muted); font-size: 14px; line-height: 1.65; }
+/* ═══════════════════════ HERO ═══════════════════════ */
+.hero{
+  min-height:calc(100vh - var(--nav-h) - var(--ticker-h));
+  display:flex;align-items:center;
+  padding:clamp(40px,6vh,80px) 0;
+  position:relative;overflow:hidden;
+}
+/* bg grid */
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(59,123,255,0.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(59,123,255,0.05) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 90% 80% at 60% 50%,black 20%,transparent 75%);
+  pointer-events:none;
+}
+.hero-glow{
+  position:absolute;right:-200px;top:50%;transform:translateY(-50%);
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,212,255,0.07) 0%,rgba(59,123,255,0.06) 35%,transparent 70%);
+  pointer-events:none;
+}
+.hero-glow2{
+  position:absolute;left:-100px;bottom:10%;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(59,123,255,0.07) 0%,transparent 70%);
+  pointer-events:none;
+  animation:float 9s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-28px)}}
+.hero-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:clamp(28px,4vw,60px);
+}
+/* hero left */
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(59,123,255,0.1);border:1px solid rgba(59,123,255,0.3);
+  padding:7px 16px;border-radius:100px;margin-bottom:24px;
+  font-size:11.5px;color:var(--blue-l);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,0.5)}50%{opacity:.6;box-shadow:0 0 0 6px rgba(0,212,255,0)}}
+.hero-title{
+  font-family:var(--display);
+  font-size:clamp(52px,6.5vw,92px);
+  line-height:.92;letter-spacing:1.5px;
+  margin-bottom:22px;
+}
+.hero-title .hl{
+  background:linear-gradient(90deg,var(--blue-l),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;display:block;
+}
+.hero-desc{
+  color:var(--muted);font-size:clamp(14px,1.5vw,16.5px);
+  line-height:1.8;max-width:500px;margin-bottom:36px;
+}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:9px;
+  background:linear-gradient(135deg,#0C4BDB,var(--blue));
+  color:#fff;padding:14px 26px;border-radius:12px;text-decoration:none;
+  font-weight:700;font-size:15px;
+  box-shadow:0 4px 22px rgba(59,123,255,0.38);
+  transition:all .25s;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(59,123,255,0.56)}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:9px;
+  color:#fff;border:1.5px solid rgba(255,255,255,0.2);
+  padding:13px 24px;border-radius:12px;text-decoration:none;
+  font-weight:600;font-size:15px;
+  background:rgba(255,255,255,0.04);
+  transition:all .25s;
+}
+.btn-outline:hover{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.08)}
+.trust-bar{display:flex;align-items:center;gap:clamp(12px,2vw,24px);flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);font-weight:500}
+.trust-divider{width:1px;height:18px;background:var(--border2)}
 
-  /* SERVICES */
-  .services-section { background: var(--charcoal); }
-  .services-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px; margin-top: 50px;
-  }
-  .svc-card {
-    background: var(--dark);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 16px; overflow: hidden;
-    transition: transform .25s, border-color .25s;
-  }
-  .svc-card:hover { transform: translateY(-5px); border-color: rgba(232,38,42,0.4); }
-  .svc-img {
-    height: 160px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 60px;
-    background: linear-gradient(135deg, var(--surface) 0%, var(--surface2) 100%);
-  }
-  .svc-body { padding: 22px 20px; }
-  .svc-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-  .svc-body p { color: var(--muted); font-size: 13px; line-height: 1.6; }
-  .svc-tag {
-    display: inline-block; margin-top: 14px;
-    background: rgba(232,38,42,0.1); border: 1px solid rgba(232,38,42,0.3);
-    color: #ff7878; font-size: 12px; font-weight: 600;
-    padding: 4px 12px; border-radius: 100px;
-  }
+/* Hero Right – Dashboard */
+.hero-dashboard{display:flex;flex-direction:column;gap:12px}
+.dash-card{
+  background:rgba(14,22,40,0.88);border:1px solid var(--border2);
+  border-radius:18px;padding:clamp(18px,2.5vw,24px);
+  backdrop-filter:blur(16px);position:relative;overflow:hidden;
+}
+.dash-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1.5px;
+  background:linear-gradient(90deg,transparent,var(--blue),var(--cyan),transparent);
+}
+/* Price */
+.price-card{text-align:center;padding:clamp(22px,3vw,30px) 24px}
+.price-label{font-size:10.5px;color:var(--muted2);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:8px}
+.price-big{
+  font-family:var(--display);font-size:clamp(52px,6vw,76px);letter-spacing:1px;line-height:1;
+  background:linear-gradient(135deg,var(--blue-l),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.price-note{font-size:12px;color:var(--muted);margin-top:6px}
+.price-cities{margin-top:10px;font-size:12.5px;font-weight:700;color:var(--blue-l);letter-spacing:.3px}
+/* Checklist */
+.ck-title{font-size:13px;font-weight:700;margin-bottom:13px;display:flex;align-items:center;gap:8px;letter-spacing:.3px}
+.ck-title span{font-size:11px;color:var(--muted);font-weight:400}
+.ck-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px}
+.ck-row:last-of-type{border-bottom:none}
+.ck-icon{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ck-ok{background:rgba(0,201,138,0.12);border:1px solid rgba(0,201,138,0.35)}
+.ck-warn{background:rgba(244,166,35,0.1);border:1px solid rgba(244,166,35,0.35)}
+.ck-prog{background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3)}
+.ck-label{flex:1;color:var(--text)}
+.ck-badge{font-size:9.5px;font-weight:800;padding:2px 8px;border-radius:100px;letter-spacing:.3px}
+.badge-ok{background:rgba(0,201,138,0.12);color:#00C98A}
+.badge-warn{background:rgba(244,166,35,0.1);color:#FFC95A}
+.badge-prog{background:rgba(0,212,255,0.1);color:var(--cyan)}
+/* Progress */
+.prog-block{margin-top:13px}
+.prog-top{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:5px}
+.prog-top strong{color:var(--blue-l);font-weight:700}
+.prog-bar{height:5px;border-radius:3px;background:rgba(255,255,255,0.06);overflow:hidden}
+.prog-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--blue-d),var(--blue),var(--cyan));animation:growBar 2.5s ease forwards}
+@keyframes growBar{from{width:0}to{width:78%}}
+/* KPI row */
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.kpi-card{
+  background:rgba(14,22,40,0.88);border:1px solid var(--border);
+  border-radius:14px;padding:14px 10px;text-align:center;
+  backdrop-filter:blur(10px);
+}
+.kpi-n{
+  font-family:var(--display);font-size:clamp(26px,3vw,34px);letter-spacing:.5px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-l));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.kpi-l{font-size:10.5px;color:var(--muted);margin-top:2px;letter-spacing:.3px}
 
-  /* HOW IT WORKS */
-  .steps {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0; margin-top: 60px; position: relative;
-  }
-  .step {
-    text-align: center; padding: 30px 24px;
-    position: relative;
-  }
-  .step:not(:last-child)::after {
-    content: '→';
-    position: absolute; right: -12px; top: 38px;
-    color: var(--red); font-size: 20px;
-  }
-  .step-num {
-    width: 64px; height: 64px; border-radius: 50%;
-    background: var(--red); color: white;
-    font-family: 'Bebas Neue', sans-serif; font-size: 28px;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 18px;
-    box-shadow: 0 0 24px rgba(232,38,42,0.4);
-  }
-  .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-  .step p { color: var(--muted); font-size: 13px; line-height: 1.6; }
+/* ═══════════════════════ STATS BAR ═══════════════════════ */
+.stats-bar{
+  background:var(--bg2);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:clamp(20px,3vw,32px) 0;
+}
+.stats-inner{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:16px;text-align:center;
+}
+.stat-n{
+  font-family:var(--display);font-size:clamp(32px,4vw,48px);letter-spacing:.5px;
+  background:linear-gradient(135deg,var(--blue-l),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.stat-l{font-size:12px;color:var(--muted);margin-top:3px;letter-spacing:.3px}
 
-  /* BRANDS */
-  .brands-section { background: var(--charcoal); }
-  .brands-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 12px; margin-top: 44px;
-  }
-  .brand-chip {
-    background: var(--surface);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 10px; padding: 14px 10px;
-    text-align: center; font-size: 13px; font-weight: 600; color: var(--muted);
-    transition: color .2s, border-color .2s;
-  }
-  .brand-chip:hover { color: white; border-color: rgba(232,38,42,0.4); }
+/* ═══════════════════════ SECTIONS ═══════════════════════ */
+section{padding:clamp(60px,8vw,100px) 0}
+.sec-head{margin-bottom:clamp(36px,5vw,56px)}
+.sec-head-row{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:clamp(36px,5vw,56px)}
 
-  /* TESTIMONIALS */
-  .testimonials-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px; margin-top: 50px;
-  }
-  .testi-card {
-    background: var(--surface);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 16px; padding: 26px 22px;
-  }
-  .stars { color: var(--gold); font-size: 16px; margin-bottom: 14px; }
-  .testi-text { color: #ccc; font-size: 14px; line-height: 1.7; margin-bottom: 18px; }
-  .testi-author { display: flex; align-items: center; gap: 12px; }
-  .author-avatar {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: var(--red); display: flex; align-items: center;
-    justify-content: center; font-weight: 700; font-size: 14px; color: white;
-    flex-shrink: 0;
-  }
-  .author-name { font-weight: 700; font-size: 14px; }
-  .author-car { color: var(--muted); font-size: 12px; margin-top: 2px; }
+/* ═══════════════════════ WHY ═══════════════════════ */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.why-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:16px;
+  padding:clamp(20px,2.5vw,26px);
+  transition:all .3s;position:relative;overflow:hidden;cursor:default;
+}
+.why-card::after{
+  content:'';position:absolute;inset:0;border-radius:16px;
+  background:radial-gradient(circle at 50% -20%,rgba(59,123,255,0.08),transparent 60%);
+  opacity:0;transition:opacity .3s;pointer-events:none;
+}
+.why-card:hover{border-color:var(--border3);transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.why-card:hover::after{opacity:1}
+.why-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:rgba(59,123,255,0.08);border:1px solid rgba(59,123,255,0.2);
+  display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:15px;
+}
+.why-card h3{font-size:15px;font-weight:700;margin-bottom:8px;letter-spacing:.2px}
+.why-card p{color:var(--muted);font-size:13.5px;line-height:1.72}
 
-  /* WHATSAPP BOOKING */
-  .booking-section {
-    background: linear-gradient(135deg, #0a0000 0%, #1a0000 50%, #0a0000 100%);
-    text-align: center;
-    border-top: 1px solid rgba(232,38,42,0.2);
-    border-bottom: 1px solid rgba(232,38,42,0.2);
-  }
-  .booking-section .section-title { color: white; }
-  .wa-box {
-    max-width: 600px; margin: 40px auto 0;
-    background: var(--surface);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 20px; padding: 36px;
-  }
-  .wa-btn {
-    display: inline-flex; align-items: center; gap: 14px;
-    background: var(--wa); color: white;
-    padding: 18px 36px; border-radius: 14px;
-    text-decoration: none; font-weight: 700; font-size: 18px;
-    transition: background .2s, transform .15s;
-    margin-top: 20px; width: 100%; justify-content: center;
-  }
-  .wa-btn:hover { background: #1eac56; transform: translateY(-2px); }
-  .wa-icon { font-size: 28px; }
-  .or-divider { color: var(--muted); font-size: 13px; margin: 18px 0; position: relative; }
-  .or-divider::before, .or-divider::after {
-    content: ''; position: absolute; top: 50%; width: 40%;
-    height: 1px; background: rgba(255,255,255,0.1);
-  }
-  .or-divider::before { left: 0; }
-  .or-divider::after { right: 0; }
-  .quick-links { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 16px; }
-  .quick-link {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    color: white; text-decoration: none;
-    padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500;
-    transition: background .2s;
-  }
-  .quick-link:hover { background: rgba(255,255,255,0.13); }
+/* ═══════════════════════ SERVICES ═══════════════════════ */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.svc-card{
+  background:var(--bg3);border:1px solid var(--border);border-radius:16px;
+  overflow:hidden;transition:all .3s;
+}
+.svc-card:hover{transform:translateY(-6px);border-color:var(--border3);box-shadow:0 20px 44px rgba(0,0,0,.4)}
+.svc-head{
+  height:120px;display:flex;align-items:center;justify-content:center;
+  font-size:48px;
+  background:linear-gradient(135deg,var(--surf),var(--surf2));
+  position:relative;
+}
+.svc-head::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--border3),transparent)}
+.svc-body{padding:clamp(16px,2vw,20px)}
+.svc-body h3{font-size:15px;font-weight:700;margin-bottom:7px}
+.svc-body p{color:var(--muted);font-size:13px;line-height:1.7}
+.svc-pill{
+  display:inline-block;margin-top:12px;
+  background:rgba(59,123,255,0.08);border:1px solid rgba(59,123,255,0.22);
+  color:var(--blue-l);font-size:10.5px;font-weight:700;
+  padding:3px 11px;border-radius:100px;letter-spacing:.4px;
+}
 
-  /* CONTACT */
-  .contact-section { background: var(--charcoal); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 50px; align-items: start; }
-  .contact-info { display: flex; flex-direction: column; gap: 20px; }
-  .contact-item {
-    display: flex; gap: 16px;
-    background: var(--surface); border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 14px; padding: 20px;
-  }
-  .contact-ico {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: rgba(232,38,42,0.1); border: 1px solid rgba(232,38,42,0.25);
-    display: flex; align-items: center; justify-content: center; font-size: 20px;
-    flex-shrink: 0;
-  }
-  .contact-item h4 { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
-  .contact-item p, .contact-item a { font-size: 15px; font-weight: 600; color: white; text-decoration: none; }
-  .contact-form { display: flex; flex-direction: column; gap: 14px; }
-  .form-group { display: flex; flex-direction: column; gap: 6px; }
-  .form-group label { font-size: 13px; color: var(--muted); font-weight: 500; }
-  .form-group input, .form-group select, .form-group textarea {
-    background: var(--surface); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px; padding: 13px 16px;
-    color: white; font-family: 'DM Sans', sans-serif; font-size: 14px;
-    transition: border-color .2s;
-    outline: none;
-  }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    border-color: rgba(232,38,42,0.5);
-  }
-  .form-group textarea { resize: vertical; min-height: 100px; }
-  .form-group select { appearance: none; cursor: pointer; }
-  .form-group select option { background: var(--surface2); }
-  .form-submit {
-    background: var(--red); color: white;
-    border: none; border-radius: 10px;
-    padding: 14px; font-size: 15px; font-weight: 700;
-    cursor: pointer; transition: background .2s;
-    font-family: 'DM Sans', sans-serif;
-  }
-  .form-submit:hover { background: var(--red-dark); }
+/* ═══════════════════════ PROCESS ═══════════════════════ */
+.proc-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:8px;position:relative;
+  margin-top:clamp(32px,4vw,52px);
+}
+.proc-line{
+  position:absolute;top:30px;left:12.5%;right:12.5%;height:1px;
+  background:linear-gradient(90deg,var(--blue-d),var(--blue),var(--cyan),var(--blue),var(--blue-d));
+  opacity:.4;
+}
+.proc-step{text-align:center;padding:0 12px;position:relative;z-index:1}
+.proc-num{
+  width:60px;height:60px;border-radius:50%;margin:0 auto 18px;
+  background:linear-gradient(135deg,var(--blue-d),var(--blue));
+  color:#fff;font-family:var(--display);font-size:26px;letter-spacing:.5px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 24px rgba(59,123,255,0.45);
+  border:2px solid rgba(111,163,255,0.25);
+}
+.proc-step h3{font-size:14px;font-weight:700;margin-bottom:7px}
+.proc-step p{color:var(--muted);font-size:12.5px;line-height:1.68}
 
-  /* AREAS */
-  .areas-section { background: var(--dark); }
-  .areas-grid {
-    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px;
-  }
-  .area-chip {
-    background: var(--surface);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 8px 16px; border-radius: 100px;
-    font-size: 13px; color: var(--muted);
-    transition: color .2s, border-color .2s;
-  }
-  .area-chip:hover { color: white; border-color: rgba(232,38,42,0.4); }
+/* ═══════════════════════ BRANDS ═══════════════════════ */
+.brands-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));
+  gap:8px;margin-top:36px;
+}
+.brand-chip{
+  background:var(--bg3);border:1px solid var(--border);border-radius:10px;
+  padding:12px 8px;text-align:center;font-size:12px;font-weight:600;
+  color:var(--muted);transition:all .2s;cursor:default;
+}
+.brand-chip:hover{color:#fff;border-color:var(--border3);background:var(--surf)}
 
-  /* FOOTER */
-  footer {
-    background: var(--darker);
-    border-top: 1px solid rgba(255,255,255,0.07);
-    padding: 60px 6% 30px;
-  }
-  .footer-grid {
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px; margin-bottom: 50px;
-  }
-  .footer-brand p { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 16px 0 24px; max-width: 280px; }
-  .social-links { display: flex; gap: 10px; }
-  .social-link {
-    width: 38px; height: 38px; border-radius: 8px;
-    background: var(--surface); border: 1px solid rgba(255,255,255,0.08);
-    display: flex; align-items: center; justify-content: center; font-size: 18px;
-    text-decoration: none; transition: background .2s, border-color .2s;
-  }
-  .social-link:hover { background: var(--red); border-color: var(--red); }
-  .footer-col h4 { font-size: 14px; font-weight: 700; margin-bottom: 18px; color: white; letter-spacing: .5px; }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .footer-col a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color .2s; }
-  .footer-col a:hover { color: white; }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.07);
-    padding-top: 24px;
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 12px;
-  }
-  .footer-bottom p { color: var(--muted); font-size: 13px; }
-  .footer-bottom a { color: var(--muted); text-decoration: none; font-size: 13px; }
-  .footer-bottom a:hover { color: white; }
+/* ═══════════════════════ AREAS ═══════════════════════ */
+.areas-wrap{display:flex;flex-wrap:wrap;gap:9px;margin-top:32px}
+.area-pill{
+  background:var(--bg2);border:1px solid var(--border);
+  padding:6px 16px;border-radius:100px;
+  font-size:12.5px;color:var(--muted);transition:all .2s;cursor:default;
+}
+.area-pill:hover{color:#fff;border-color:var(--border3);background:var(--surf)}
 
-  /* FLOAT WA BTN */
-  .float-wa {
-    position: fixed; bottom: 28px; right: 28px; z-index: 999;
-    background: var(--wa); color: white;
-    width: 60px; height: 60px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 28px; text-decoration: none;
-    box-shadow: 0 6px 24px rgba(37,211,102,0.5);
-    transition: transform .2s;
-    animation: pulse-wa 2s ease-in-out infinite;
-  }
-  .float-wa:hover { transform: scale(1.1); }
-  @keyframes pulse-wa {
-    0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5); }
-    50% { box-shadow: 0 6px 36px rgba(37,211,102,0.8); }
-  }
+/* ═══════════════════════ TESTIMONIALS ═══════════════════════ */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin-top:clamp(32px,4vw,48px)}
+.testi-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:16px;
+  padding:clamp(20px,2.5vw,26px);
+  transition:all .3s;position:relative;
+}
+.testi-card::before{
+  content:'\201C';position:absolute;top:10px;right:16px;
+  font-family:var(--display);font-size:80px;
+  color:rgba(59,123,255,0.07);line-height:1;pointer-events:none;
+}
+.testi-card:hover{border-color:var(--border3);transform:translateY(-4px);box-shadow:0 16px 36px rgba(0,0,0,.3)}
+.stars{color:var(--gold);font-size:13px;letter-spacing:2.5px;margin-bottom:12px}
+.testi-text{color:#C8D6EE;font-size:13.5px;line-height:1.8;margin-bottom:18px}
+.testi-who{display:flex;align-items:center;gap:12px}
+.avatar{
+  width:40px;height:40px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--blue-d),var(--blue));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:13px;color:#fff;
+}
+.who-name{font-weight:700;font-size:13.5px}
+.who-car{color:var(--muted);font-size:11.5px;margin-top:2px}
 
-  /* MOBILE */
-  @media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; padding: 40px 5% 60px; min-height: auto; }
-    .hero-right { display: none; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-    .steps { grid-template-columns: 1fr; }
-    .step:not(:last-child)::after { display: none; }
-  }
-  @media (max-width: 480px) {
-    .footer-grid { grid-template-columns: 1fr; }
-  }
+/* ═══════════════════════ BOOKING ═══════════════════════ */
+.booking-section{
+  background:radial-gradient(ellipse 70% 55% at 50% 50%,rgba(59,123,255,0.08) 0%,transparent 65%),var(--bg);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  text-align:center;
+}
+.book-box{
+  max-width:560px;margin:40px auto 0;
+  background:rgba(10,16,32,0.92);border:1px solid var(--border3);
+  border-radius:20px;padding:clamp(24px,3vw,36px);backdrop-filter:blur(16px);
+}
+.wa-btn-big{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  background:linear-gradient(135deg,#096540,var(--wa));
+  color:#fff;padding:16px 28px;border-radius:13px;text-decoration:none;
+  font-weight:700;font-size:15.5px;margin-top:18px;
+  box-shadow:0 4px 20px rgba(37,211,102,0.3);transition:all .25s;
+}
+.wa-btn-big:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,0.5)}
+.or-divider{
+  color:var(--muted2);font-size:12px;
+  margin:16px 0;position:relative;text-align:center;
+}
+.or-divider::before,.or-divider::after{
+  content:'';position:absolute;top:50%;width:42%;height:1px;background:var(--border);
+}
+.or-divider::before{left:0}.or-divider::after{right:0}
+.quick-btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.q-btn{
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  color:#fff;text-decoration:none;padding:10px 18px;border-radius:10px;
+  font-size:13px;font-weight:500;transition:all .2s;
+}
+.q-btn:hover{background:rgba(59,123,255,0.14);border-color:var(--border3)}
+
+/* ═══════════════════════ CONTACT ═══════════════════════ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,52px);margin-top:clamp(32px,4vw,48px);align-items:start}
+.c-info-stack{display:flex;flex-direction:column;gap:12px}
+.c-card{
+  display:flex;gap:14px;background:var(--bg3);border:1px solid var(--border);
+  border-radius:13px;padding:clamp(14px,2vw,18px);transition:border-color .2s;
+}
+.c-card:hover{border-color:var(--border3)}
+.c-ico{
+  width:42px;height:42px;border-radius:11px;flex-shrink:0;
+  background:rgba(59,123,255,0.08);border:1px solid rgba(59,123,255,0.2);
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+.c-card h4{font-size:10.5px;color:var(--muted2);margin-bottom:3px;letter-spacing:.6px;text-transform:uppercase;font-weight:600}
+.c-card p,.c-card a{font-size:14.5px;font-weight:600;color:#fff;text-decoration:none}
+/* form */
+.cform{display:flex;flex-direction:column;gap:13px}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fg label{font-size:10.5px;color:var(--muted2);font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.fg input,.fg select,.fg textarea{
+  background:var(--bg3);border:1.5px solid var(--border);border-radius:10px;
+  padding:12px 15px;color:#fff;
+  font-family:var(--font);font-size:14px;font-weight:400;
+  outline:none;transition:all .2s;width:100%;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:rgba(59,123,255,.55);box-shadow:0 0 0 3px rgba(59,123,255,.09)
+}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted2)}
+.fg textarea{resize:vertical;min-height:96px}
+.fg select{appearance:none;cursor:pointer}
+.fg select option{background:var(--bg2);color:#fff}
+.form-submit{
+  background:linear-gradient(135deg,var(--blue-d),var(--blue));
+  color:#fff;border:none;border-radius:11px;padding:14px;
+  font-size:14.5px;font-weight:700;cursor:pointer;
+  font-family:var(--font);
+  box-shadow:0 4px 16px rgba(59,123,255,0.3);transition:all .25s;width:100%;
+}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(59,123,255,0.5)}
+
+/* ═══════════════════════ FOOTER ═══════════════════════ */
+footer{
+  background:var(--bg);border-top:1px solid var(--border);
+  padding:clamp(44px,6vw,64px) 0 clamp(20px,3vw,28px);
+}
+.foot-grid{
+  display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;
+  gap:clamp(24px,3vw,40px);margin-bottom:clamp(36px,5vw,52px);
+}
+.foot-brand .logo{margin-bottom:16px}
+.foot-brand .logo img{height:52px}
+.foot-brand p{color:var(--muted);font-size:13.5px;line-height:1.75;margin-bottom:20px;max-width:270px}
+.socials{display:flex;gap:9px}
+.soc{
+  width:36px;height:36px;border-radius:9px;
+  background:var(--bg2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;text-decoration:none;transition:all .2s;color:var(--muted);
+}
+.soc:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.fcol h4{font-size:11px;font-weight:700;margin-bottom:16px;color:#fff;letter-spacing:1.2px;text-transform:uppercase}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fcol a{color:var(--muted);text-decoration:none;font-size:13.5px;transition:color .2s}
+.fcol a:hover{color:#fff}
+.foot-bottom{
+  border-top:1px solid var(--border);padding-top:22px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.foot-bottom p,.foot-bottom a{color:var(--muted2);font-size:12.5px;text-decoration:none}
+.foot-bottom a:hover{color:var(--muted)}
+.foot-links{display:flex;gap:18px}
+
+/* ═══════════════════════ FLOAT WA ═══════════════════════ */
+.float-wa{
+  position:fixed;bottom:24px;right:24px;z-index:9999;
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,#096540,var(--wa));
+  color:#fff;text-decoration:none;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(37,211,102,0.5);
+  animation:wapulse 2.2s ease-in-out infinite;
+  transition:transform .2s;
+}
+.float-wa:hover{transform:scale(1.1);animation:none}
+@keyframes wapulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.5)}50%{box-shadow:0 6px 38px rgba(37,211,102,0.85)}}
+
+/* ═══════════════════════ FADE IN ═══════════════════════ */
+.fi{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+.fi.vis{opacity:1;transform:none}
+
+/* ═══════════════════════ RESPONSIVE ═══════════════════════ */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero{min-height:auto;padding:clamp(36px,5vw,60px) 0}
+  .hero-title{font-size:clamp(60px,10vw,84px)}
+  .proc-grid{grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,28px)}
+  .proc-line{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .stats-inner{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+  :root{--nav-h:62px;--ticker-h:32px}
+  .nav-links,.nav-cta{display:none}
+  .ham{display:flex}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .hero-title{font-size:clamp(48px,14vw,70px)}
+  .hero-btns{flex-direction:column}
+  .btn-primary,.btn-outline{justify-content:center;text-align:center}
+  .proc-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .kpi-row .kpi-n{font-size:26px}
+  .hero-dashboard{gap:10px}
+  .trust-divider{display:none}
+}
+@media(max-width:380px){
+  .stats-inner{grid-template-columns:1fr 1fr}
+  .hero-title{font-size:46px}
+}
 </style>
 </head>
 <body>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/919540859096?text=Hello%20Trust%20PDI%2C%20I%20want%20to%20book%20a%20Car%20PDI%20inspection." 
-   class="float-wa" target="_blank" rel="noopener" title="Book on WhatsApp">
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<!-- ═══ FLOAT WA BUTTON ═══ -->
+<a href="https://wa.me/918744911716?text=Hello%20Trust%20PDI%2C%20I%20want%20to%20book%20a%20Car%20PDI%20inspection." class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<!-- NAV -->
-<nav>
-  <a href="#home" class="logo-box">
-    <div class="logo-icon">PDI</div>
-    <div class="logo-text">
-      <div class="logo-name">TRUST PDI</div>
-      <div class="logo-sub">Pre-Delivery Inspection</div>
+<!-- ═══ NAVBAR ═══ -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#home" class="logo" aria-label="Trust PDI Home">
+      <img src="data:image/jpeg;base64,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n/Wdd53N31HWdd53N31A3A2m+Un2l2k7UNPus67zubvqOs67zubvqBuDtN8pBtJycn2mn3Wdd53N31HWdd53N31CNwttvahdpvlIaedZ13nc3fUvWlf53N31CtwtpPKQu03yk+00760r/O5u+o60r/O5u+oG4m03tQbacnIad9aV/nc3fUdaV/nc3fUDcVHt8pPtLtN8pPtNOetK/wA7m76l60r/ADyfvqNDcXab5SDab5SGnXWlf55P31HWlf55P31A3F2m+Un2jaTtT7TTrrSv88n76jrSv88n76gbjbTe1PtG03ykNOetK/zyfvqOtK/zyfvqNDcbab5SfaNpvlJ9ppx1pX+eTd9S9aV/nk/fUDcbab5SEy3yk+00660r/PJ++o60r/PJ++oG4203ykJtN8pDTrrSv88n76jrSv8APJ++o0NxdtvlJ9pdtvahpz1pX+eT99R1pX+eT99QNxdtufjJ9o2k8pPtNOutK/zyfvqOtK/zyfvqBuLtN8pPtG03ykNOutK/zyfvqOtK/wA8n76hG4m03ykG0nahp31pX+eT99R1pX+dzd9QrcPbb5SfaNpvahp31pX+dzd9R1pX+dzd9QNxNpvahNpvlJ9pp51pX+dzd9R1pX+dzd9QNw9pvlINtvan2mnnWlf53N31HWdd53N31A3C2m+Un2k2m+Uhp91nXedzd9R1nXedzd9QNwdpvahNpvlIaf8AWdd53N31HWdd53N31A3A2m9qfaTaTykNQOs67zubvqOs67zubvqBt9tN8pBtN8pDUHrOu87m76jrOu87m76gbe7Te1PtJtNz8ZPtNQ+s67zubvqOs67zubvqBt5tt8pBtN8pDUPrOu87m76jrOu87m76gbebTe1CZbnin2monWdd53N31HWdd53N31A272m+UhNpvlIai9ZV3nc3fUdZV3nc3fUI252m8nIZbTcfGQ1D6zrvO5u+pes67zubvqUbd7Te1CK5vlIai9Z13nc3fUdZ13nc3fUJptyrm+UhjtNTmhqR1lXedzd9R1lXedzd9QrbjLe1BtN7UNR+sq7zubvqOsq7zubvqBtxtJ2oNpO1DUfrKu87m76jrKu87m76hNNuNpvan2k2m+UhqR1nXedzd9SdZ13nc3fUK252m9qDab2oajdZ13nc3fUdZ13nc3fUDbnab2oNpvahqN1nXedzd9R1nXedzd9QNudpvagNR+sq7zubvqAP/9k=" alt="Trust PDI Logo" width="48" height="48">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://wa.me/918744911716?text=Hello%20Trust%20PDI%2C%20I%20want%20to%20book%20a%20PDI." class="nav-cta" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Book Now
+    </a>
+    <div class="ham" id="ham" onclick="toggleNav()" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
     </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="https://wa.me/919540859096?text=Hello%20Trust%20PDI%2C%20I%20want%20to%20book%20a%20Car%20PDI." 
-     class="nav-cta" target="_blank">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Book Now
-  </a>
+  </div>
 </nav>
 
-<!-- TICKER -->
-<div class="ticker">
-  <span class="ticker-inner">
-    🚗 Delhi &nbsp;|&nbsp; Gurgaon &nbsp;|&nbsp; Noida &nbsp;|&nbsp; Faridabad &nbsp;|&nbsp; Ghaziabad &nbsp;|&nbsp; Ballabhgarh &nbsp;|&nbsp; Sonipat &nbsp;|&nbsp; Panipat &nbsp;|&nbsp; Meerut &nbsp;|&nbsp; Agra &nbsp;|&nbsp; Palwal &nbsp;|&nbsp; ✅ Starting @ ₹1,999/- Only &nbsp;|&nbsp; 📞 Call/WhatsApp: 9540859096 &nbsp;&nbsp;&nbsp;&nbsp;
-    🚗 Delhi &nbsp;|&nbsp; Gurgaon &nbsp;|&nbsp; Noida &nbsp;|&nbsp; Faridabad &nbsp;|&nbsp; Ghaziabad &nbsp;|&nbsp; Manesar &nbsp;|&nbsp; Bahadurgarh &nbsp;|&nbsp; Ballabhgarh &nbsp;|&nbsp; Sonipat &nbsp;|&nbsp; Panipat &nbsp;|&nbsp; Rohtak &nbsp;|&nbsp; Meerut &nbsp;|&nbsp; Agra &nbsp;|&nbsp; Mathura &nbsp;|&nbsp; Palwal &nbsp;|&nbsp; ✅ Starting @ ₹2,499/- Only &nbsp;|&nbsp; 📞 Call/WhatsApp: 9540859096 &nbsp;&nbsp;&nbsp;&nbsp;
-  </span>
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobmenu" role="navigation" aria-label="Mobile navigation">
+  <a href="#home" onclick="closeMob()">Home</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#process" onclick="closeMob()">Process</a>
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="https://wa.me/918744911716" class="mob-cta" target="_blank" rel="noopener">📱 Book on WhatsApp</a>
 </div>
 
-<!-- HERO -->
+<!-- ═══ TICKER ═══ -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    🚗 Delhi <span class="sep">|</span> Gurgaon <span class="sep">|</span> Noida <span class="sep">|</span> Faridabad <span class="sep">|</span> Ghaziabad <span class="sep">|</span> Meerut <span class="sep">|</span> Agra <span class="sep">|</span> Mathura <span class="sep">|</span> Sonipat <span class="sep">|</span> Panipat <span class="sep">|</span> Rohtak <span class="sep">|</span> Palwal &nbsp;&nbsp;&nbsp; ✅ Starting @ ₹1,999/- Only &nbsp;&nbsp;&nbsp; 📞 Call / WhatsApp: 8744911716 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    🚗 Delhi <span class="sep">|</span> Gurgaon <span class="sep">|</span> Noida <span class="sep">|</span> Faridabad <span class="sep">|</span> Ghaziabad <span class="sep">|</span> Meerut <span class="sep">|</span> Agra <span class="sep">|</span> Mathura <span class="sep">|</span> Sonipat <span class="sep">|</span> Panipat <span class="sep">|</span> Rohtak <span class="sep">|</span> Palwal &nbsp;&nbsp;&nbsp; ✅ Starting @ ₹1,999/- Only &nbsp;&nbsp;&nbsp; 📞 Call / WhatsApp: 8744911716 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
 <section id="home" class="hero">
-  <div>
-    <div class="hero-badge">India's Most Trusted PDI Service</div>
-    <h1>360° CAR <span>PRE-DELIVERY<br>INSPECTION</span> EXPERTS</h1>
-    <p>New car kharidne se pehle hamare experts se karwayein complete inspection. 3500+ checkpoints, unbiased report, aur 100% peace of mind — guaranteed.</p>
-    <div class="hero-btns">
-      <a href="https://wa.me/919540859096?text=Hello%20Trust%20PDI%2C%20I%20want%20to%20book%20a%20Car%20PDI%20inspection.%20Please%20share%20the%20details." 
-         class="btn-primary" target="_blank">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp Pe Book Karein
-      </a>
-      <a href="#services" class="btn-secondary">Our Services ↓</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-visual">
-      <div style="font-size:48px;margin-bottom:10px;">🔍</div>
-      <div class="hero-price">₹1,999</div>
-      <div class="hero-price-label">Starting Price — All Inclusive</div>
-      <div style="margin-top:20px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08);">
-        <div style="font-size:13px;color:var(--muted);margin-bottom:8px;">Available In</div>
-        <div style="font-size:14px;font-weight:600;">Delhi • Gurgaon • Noida • NCR & More</div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-badge"><span class="live-dot"></span>India's Most Trusted PDI Service</div>
+        <h1 class="hero-title">
+          360° NEW CAR
+          <span class="hl">PRE-DELIVERY</span>
+          <span class="hl">INSPECTION</span>
+        </h1>
+        <p class="hero-desc">Before you accept delivery, let our certified experts inspect every inch of your new car — 350+ checkpoints, completely unbiased report, and 100% peace of mind guaranteed.</p>
+        <div class="hero-btns">
+          <a href="https://wa.me/918744911716?text=Hello%20Trust%20PDI!%20I%20want%20to%20book%20a%20Car%20PDI%20inspection.%20Please%20share%20details." class="btn-primary" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Book on WhatsApp
+          </a>
+          <a href="#services" class="btn-outline">View Services ↓</a>
+        </div>
+        <div class="trust-bar">
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="#00C98A"><path d="M10 1l2.39 4.84L18 6.77l-4 3.9.94 5.5L10 13.77l-4.93 2.4.94-5.5-4-3.9 5.6-.93z"/></svg>
+            500+ Happy Customers
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#3B7BFF" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"/></svg>
+            100% Unbiased Reports
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#F4A623" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"/></svg>
+            3+ Years Experience
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="checkpoints-row">
-      <div class="cp-card">
-        <div class="cp-num">300+</div>
-        <div class="cp-lbl">Checkpoints</div>
-      </div>
-      <div class="cp-card">
-        <div class="cp-num">3+</div>
-        <div class="cp-lbl">Yrs Experience</div>
-      </div>
-      <div class="cp-card">
-        <div class="cp-num">100%</div>
-        <div class="cp-lbl">Unbiased</div>
+
+      <!-- RIGHT DASHBOARD -->
+      <div class="hero-dashboard">
+        <!-- Price -->
+        <div class="dash-card price-card">
+          <div class="price-label">Starting Price — All Inclusive</div>
+          <div class="price-big">₹1,999</div>
+          <div class="price-note">No hidden charges · Instant WhatsApp report</div>
+          <div class="price-cities">Delhi · Noida · Gurgaon · NCR &amp; More</div>
+        </div>
+        <!-- Checklist -->
+        <div class="dash-card">
+          <div class="ck-title">Live Inspection Report <span>· 350+ Points Covered</span></div>
+          <div class="ck-row">
+            <div class="ck-icon ck-ok"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#00C98A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="ck-label">Engine &amp; Mechanical Systems</span>
+            <span class="ck-badge badge-ok">Clear</span>
+          </div>
+          <div class="ck-row">
+            <div class="ck-icon ck-ok"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#00C98A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="ck-label">Paint &amp; Body Panels</span>
+            <span class="ck-badge badge-ok">Clear</span>
+          </div>
+          <div class="ck-row">
+            <div class="ck-icon ck-warn"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><line x1="6" y1="3" x2="6" y2="7" stroke="#F4A623" stroke-width="2" stroke-linecap="round"/><circle cx="6" cy="9.5" r=".9" fill="#F4A623"/></svg></div>
+            <span class="ck-label">Tyre &amp; Battery Health</span>
+            <span class="ck-badge badge-warn">Review</span>
+          </div>
+          <div class="ck-row">
+            <div class="ck-icon ck-ok"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#00C98A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="ck-label">Software &amp; Electronics (OBD)</span>
+            <span class="ck-badge badge-ok">Clear</span>
+          </div>
+          <div class="ck-row">
+            <div class="ck-icon ck-prog"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="3.5" stroke="#00D4FF" stroke-width="1.5"/><line x1="6" y1="4" x2="6" y2="6.5" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <span class="ck-label">Interior &amp; Accessories</span>
+            <span class="ck-badge badge-prog">In Progress</span>
+          </div>
+          <div class="prog-block">
+            <div class="prog-top"><span>Overall Inspection</span><strong>78%</strong></div>
+            <div class="prog-bar"><div class="prog-fill"></div></div>
+          </div>
+        </div>
+        <!-- KPIs -->
+        <div class="kpi-row">
+          <div class="kpi-card"><div class="kpi-n">350+</div><div class="kpi-l">Checkpoints</div></div>
+          <div class="kpi-card"><div class="kpi-n">3+</div><div class="kpi-l">Yrs Experience</div></div>
+          <div class="kpi-card"><div class="kpi-n">100%</div><div class="kpi-l">Unbiased</div></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
+<!-- ═══ STATS BAR ═══ -->
 <div class="stats-bar">
-  <div class="stat"><div class="stat-num">500+</div><div class="stat-lbl">Happy Customers</div></div>
-  <div class="stat"><div class="stat-num">350+</div><div class="stat-lbl">Inspection Points</div></div>
-  <div class="stat"><div class="stat-num">3+</div><div class="stat-lbl">Years Experience</div></div>
-  <div class="stat"><div class="stat-num">22+</div><div class="stat-lbl">Car Brands Covered</div></div>
-  <div class="stat"><div class="stat-num">15+</div><div class="stat-lbl">Cities Covered</div></div>
+  <div class="container">
+    <div class="stats-inner">
+      <div><div class="stat-n">500+</div><div class="stat-l">Happy Customers</div></div>
+      <div><div class="stat-n">350+</div><div class="stat-l">Inspection Points</div></div>
+      <div><div class="stat-n">3+</div><div class="stat-l">Years Experience</div></div>
+      <div><div class="stat-n">22+</div><div class="stat-l">Car Brands Covered</div></div>
+      <div><div class="stat-n">15+</div><div class="stat-l">Cities Covered</div></div>
+    </div>
+  </div>
 </div>
 
-<!-- WHY CHOOSE -->
+<!-- ═══ WHY CHOOSE ═══ -->
 <section id="about">
-  <div class="section-tag">Why Trust PDI?</div>
-  <div class="section-title">INDUSTRY EXPERTS WITH<br>3+ YEARS OF EXPERIENCE</div>
-  <div class="section-sub">Hum aapke naye car ki delivery se pehle ek complete aur transparent inspection karte hain — taaki aap apna paisa waste na karein.</div>
-  <div class="features-grid">
-    <div class="feat-card">
-      <div class="feat-icon">🔎</div>
-      <h3>350+ Checkpoint Inspection</h3>
-      <p>Engine se leke exterior tak — hum 350+ points cover karte hain. Koi bhi defect chhupta nahi hai hamare experts se.</p>
+  <div class="container">
+    <div class="sec-head-row">
+      <div>
+        <div class="tag">Why Trust PDI?</div>
+        <div class="sec-h">EXPERTS WITH 3+<br>YEARS PDI EXPERIENCE</div>
+      </div>
+      <p class="sec-sub">We perform a complete, transparent inspection of your new car before delivery — so your hard-earned money is never wasted on hidden defects or dealer deception.</p>
     </div>
-    <div class="feat-card">
-      <div class="feat-icon">⚖️</div>
-      <h3>100% Unbiased & Independent</h3>
-      <p>Hum kisi bhi dealer ya manufacturer se tied nahi hain. Hamaari report completely neutral aur transparent hoti hai.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">🛠️</div>
-      <h3>State-of-the-Art Tools</h3>
-      <p>Latest technology aur professional grade equipment use karke hum har kone ki accurate inspection karte hain.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">📋</div>
-      <h3>Detailed Digital Report</h3>
-      <p>Inspection ke baad aapko ek detailed digital report milti hai jisme photos aur findings clearly mention hoti hain.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">👨‍🔧</div>
-      <h3>Certified Technicians</h3>
-      <p>Haare saare experts certified aur experienced hain. 3+ saalon ka experience aapki car ke saath safe haath mein hai.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">⚡</div>
-      <h3>Fast & Reliable Service</h3>
-      <p>Book karo aur hum showroom pe directly aayenge. Quick scheduling aur on-time inspection guaranteed.</p>
+    <div class="why-grid">
+      <div class="why-card fi"><div class="why-icon">🔎</div><h3>350+ Checkpoint Inspection</h3><p>From engine bay to exterior panels — our experts cover 350+ inspection points. Not a single defect goes undetected.</p></div>
+      <div class="why-card fi"><div class="why-icon">⚖️</div><h3>100% Unbiased &amp; Independent</h3><p>We are completely independent — not tied to any dealer or manufacturer. Our reports are fully neutral and transparent.</p></div>
+      <div class="why-card fi"><div class="why-icon">🛠️</div><h3>Professional Grade Tools</h3><p>OBD scanners, paint thickness gauges, ultrasonic sensors — we use the same tools professionals rely on for accurate results.</p></div>
+      <div class="why-card fi"><div class="why-icon">📋</div><h3>Detailed Digital Report</h3><p>After every inspection you receive a comprehensive digital report with photos and findings — delivered directly to your WhatsApp.</p></div>
+      <div class="why-card fi"><div class="why-icon">👨‍🔧</div><h3>Certified Technicians</h3><p>All our experts are certified automotive professionals with 3+ years of dedicated PDI inspection experience.</p></div>
+      <div class="why-card fi"><div class="why-icon">⚡</div><h3>Fast &amp; Reliable Scheduling</h3><p>Book us and we come directly to your showroom. Quick scheduling, on-time arrival, hassle-free inspections — every time.</p></div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="services-section">
-  <div class="section-tag">Our Services</div>
-  <div class="section-title">EXPERTISE THAT MATTERS</div>
-  <div class="section-sub">Hamare comprehensive PDI services aapki nai car ko har angle se check karte hain.</div>
-  <div class="services-grid">
-    <div class="svc-card">
-      <div class="svc-img">🔧</div>
-      <div class="svc-body">
-        <h3>Engine Health Diagnosis</h3>
-        <p>Complete engine check, oil levels, cooling system, belts, hoses aur sab mechanical components ki detailed inspection.</p>
-        <span class="svc-tag">Most Popular</span>
+<!-- ═══ SERVICES ═══ -->
+<section id="services" style="background:var(--bg2)">
+  <div class="container">
+    <div class="sec-head-row">
+      <div>
+        <div class="tag">Our Services</div>
+        <div class="sec-h">COMPREHENSIVE<br>PDI SERVICES</div>
       </div>
+      <p class="sec-sub">Our inspection services examine every aspect of your new vehicle from every possible angle.</p>
     </div>
-    <div class="svc-card">
-      <div class="svc-img">⚙️</div>
-      <div class="svc-body">
-        <h3>Mechanical Defects Scan</h3>
-        <p>Suspension, brakes, steering, transmission aur underbody — sab mechanical parts ka thorough inspection.</p>
-        <span class="svc-tag">Included</span>
-      </div>
-    </div>
-    <div class="svc-card">
-      <div class="svc-img">💻</div>
-      <div class="svc-body">
-        <h3>Software & Electronics Check</h3>
-        <p>OBD scanner se ECU diagnosis, all sensors, infotainment, ADAS features aur electrical systems ki complete checking.</p>
-        <span class="svc-tag">Tech-Advanced</span>
-      </div>
-    </div>
-    <div class="svc-card">
-      <div class="svc-img">🎨</div>
-      <div class="svc-body">
-        <h3>Paint & Body Diagnosis</h3>
-        <p>Paint thickness gauge se har panel ki measurement — transit damage, repainting, dents aur panel gaps detect karte hain.</p>
-        <span class="svc-tag">Precision Tool</span>
-      </div>
-    </div>
-    <div class="svc-card">
-      <div class="svc-img">🔋</div>
-      <div class="svc-body">
-        <h3>Battery & Tyre Health</h3>
-        <p>Battery health check, tyre pressure, tread depth, spare wheel aur related accessories ki complete verification.</p>
-        <span class="svc-tag">Safety Critical</span>
-      </div>
-    </div>
-    <div class="svc-card">
-      <div class="svc-img">🏠</div>
-      <div class="svc-body">
-        <h3>Interior Inspection</h3>
-        <p>Seats, dashboard, AC, all controls, windows, sunroof, boot space aur interior finish quality ki detailed checking.</p>
-        <span class="svc-tag">360° Coverage</span>
-      </div>
+    <div class="svc-grid">
+      <div class="svc-card fi"><div class="svc-head">🔧</div><div class="svc-body"><h3>Engine Health Diagnosis</h3><p>Complete engine check covering oil levels, cooling system, belts, hoses and all mechanical components for a thorough assessment.</p><span class="svc-pill">Most Popular</span></div></div>
+      <div class="svc-card fi"><div class="svc-head">⚙️</div><div class="svc-body"><h3>Mechanical Defects Scan</h3><p>Suspension, brakes, steering, transmission and underbody — every mechanical part inspected thoroughly by our certified experts.</p><span class="svc-pill">Included</span></div></div>
+      <div class="svc-card fi"><div class="svc-head">💻</div><div class="svc-body"><h3>Software &amp; Electronics</h3><p>OBD scanner diagnosis, all sensors, infotainment, ADAS features and full electrical system verification using latest tools.</p><span class="svc-pill">Tech-Advanced</span></div></div>
+      <div class="svc-card fi"><div class="svc-head">🎨</div><div class="svc-body"><h3>Paint &amp; Body Diagnosis</h3><p>Paint thickness gauge measurements on every panel — transit damage, repainting, dents and panel alignment all detected.</p><span class="svc-pill">Precision Tool</span></div></div>
+      <div class="svc-card fi"><div class="svc-head">🔋</div><div class="svc-body"><h3>Battery &amp; Tyre Health</h3><p>Battery health check, tyre pressure, tread depth, spare wheel and all associated accessories fully verified and documented.</p><span class="svc-pill">Safety Critical</span></div></div>
+      <div class="svc-card fi"><div class="svc-head">🏠</div><div class="svc-body"><h3>Interior Inspection</h3><p>Seats, dashboard, AC, all controls, windows, sunroof, boot space and interior finish quality — complete 360° coverage.</p><span class="svc-pill">360° Coverage</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section id="how">
-  <div class="section-tag">Process</div>
-  <div class="section-title">HOW IT WORKS</div>
-  <div class="section-sub">Booking se leke report tak — simple aur transparent process in just 4 steps.</div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h3>WhatsApp Pe Book Karein</h3>
-      <p>Hamein WhatsApp karein aur apni car delivery date, model aur showroom location share karein.</p>
+<!-- ═══ PROCESS ═══ -->
+<section id="process">
+  <div class="container">
+    <div class="sec-head" style="text-align:center">
+      <div class="tag" style="justify-content:center">Process</div>
+      <div class="sec-h">HOW IT WORKS</div>
+      <p class="sec-sub" style="margin:0 auto">From booking to final report — a simple, transparent process completed in just 4 steps.</p>
     </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <h3>Expert Assign Hoga</h3>
-      <p>Hamar certified expert aapke area aur delivery time ke according schedule confirm karega.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <h3>Showroom Pe Inspection</h3>
-      <p>Expert showroom pe pahuchega aur delivery se pehle 3500+ points pe complete inspection karega.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <h3>Detailed Report Milegi</h3>
-      <p>Inspection ke baad aapko photos ke saath detailed digital report milegi — seedha WhatsApp pe.</p>
+    <div class="proc-grid">
+      <div class="proc-line"></div>
+      <div class="proc-step fi"><div class="proc-num">1</div><h3>Book via WhatsApp</h3><p>Message us with your car model, delivery date and showroom location. Instant response, every time.</p></div>
+      <div class="proc-step fi"><div class="proc-num">2</div><h3>Expert Assigned</h3><p>A certified expert is assigned based on your area and schedule. Confirmation sent to your WhatsApp immediately.</p></div>
+      <div class="proc-step fi"><div class="proc-num">3</div><h3>On-site Inspection</h3><p>Our expert arrives at the showroom and performs a comprehensive 350+ point inspection before you take delivery.</p></div>
+      <div class="proc-step fi"><div class="proc-num">4</div><h3>Receive Your Report</h3><p>A detailed digital report with photos and findings is delivered directly to your WhatsApp right after inspection.</p></div>
     </div>
   </div>
 </section>
 
-<!-- AREAS -->
-<section class="areas-section">
-  <div class="section-tag">Coverage</div>
-  <div class="section-title">CITIES WE SERVE</div>
-  <div class="section-sub">Delhi NCR se leke UP, Haryana tak — hum har jagah available hain.</div>
-  <div class="areas-grid">
-    <span class="area-chip">Delhi</span>
-    <span class="area-chip">Gurgaon</span>
-    <span class="area-chip">Noida</span>
-    <span class="area-chip">Faridabad</span>
-    <span class="area-chip">Ghaziabad</span>
-    <span class="area-chip">Manesar</span>
-    <span class="area-chip">Bahadurgarh</span>
-    <span class="area-chip">Ballabhgarh</span>
-    <span class="area-chip">Sohna</span>
-    <span class="area-chip">Sonipat</span>
-    <span class="area-chip">Panipat</span>
-    <span class="area-chip">Karnal</span>
-    <span class="area-chip">Kurukshetra</span>
-    <span class="area-chip">Rohtak</span>
-    <span class="area-chip">Hisar</span>
-    <span class="area-chip">Bhiwani</span>
-    <span class="area-chip">Meerut</span>
-    <span class="area-chip">Agra</span>
-    <span class="area-chip">Mathura</span>
-    <span class="area-chip">Palwal</span>
-    <span class="area-chip">Nuh</span>
-    <span class="area-chip">Bhiwadi</span>
-    <span class="area-chip">Bulandshahr</span>
-    <span class="area-chip">Hapur</span>
-    <span class="area-chip">Baghpat</span>
-    <span class="area-chip">Shamli</span>
-    <span class="area-chip">Rewari</span>
-    <span class="area-chip">Jind</span>
-    <span class="area-chip">Narnaul</span>
-    <span class="area-chip">Jhajjhar</span>
+<!-- ═══ AREAS ═══ -->
+<section style="background:var(--bg2)">
+  <div class="container">
+    <div class="tag">Coverage</div>
+    <div class="sec-h">CITIES WE SERVE</div>
+    <p class="sec-sub">From Delhi NCR to Haryana and Uttar Pradesh — we are available across the entire region.</p>
+    <div class="areas-wrap">
+      <span class="area-pill">Delhi</span><span class="area-pill">Gurgaon</span><span class="area-pill">Noida</span><span class="area-pill">Faridabad</span><span class="area-pill">Ghaziabad</span><span class="area-pill">Manesar</span><span class="area-pill">Bahadurgarh</span><span class="area-pill">Ballabhgarh</span><span class="area-pill">Sohna</span><span class="area-pill">Sonipat</span><span class="area-pill">Panipat</span><span class="area-pill">Karnal</span><span class="area-pill">Kurukshetra</span><span class="area-pill">Rohtak</span><span class="area-pill">Hisar</span><span class="area-pill">Bhiwani</span><span class="area-pill">Meerut</span><span class="area-pill">Agra</span><span class="area-pill">Mathura</span><span class="area-pill">Palwal</span><span class="area-pill">Nuh</span><span class="area-pill">Bhiwadi</span><span class="area-pill">Bulandshahr</span><span class="area-pill">Hapur</span><span class="area-pill">Baghpat</span><span class="area-pill">Shamli</span><span class="area-pill">Rewari</span><span class="area-pill">Jind</span><span class="area-pill">Narnaul</span><span class="area-pill">Jhajjhar</span>
+    </div>
   </div>
 </section>
 
-<!-- BRANDS -->
-<section class="brands-section">
-  <div class="section-tag">We Cover</div>
-  <div class="section-title">ALL MAJOR CAR BRANDS</div>
-  <div class="brands-grid">
-    <div class="brand-chip">Maruti Suzuki</div>
-    <div class="brand-chip">Hyundai</div>
-    <div class="brand-chip">Tata Motors</div>
-    <div class="brand-chip">Mahindra</div>
-    <div class="brand-chip">Honda</div>
-    <div class="brand-chip">Toyota</div>
-    <div class="brand-chip">KIA</div>
-    <div class="brand-chip">MG</div>
-    <div class="brand-chip">Skoda</div>
-    <div class="brand-chip">Volkswagen</div>
-    <div class="brand-chip">Renault</div>
-    <div class="brand-chip">Nissan</div>
-    <div class="brand-chip">Jeep</div>
-    <div class="brand-chip">Citroen</div>
-    <div class="brand-chip">BMW</div>
-    <div class="brand-chip">Mercedes</div>
-    <div class="brand-chip">Audi</div>
-    <div class="brand-chip">Land Rover</div>
-    <div class="brand-chip">Jaguar</div>
-    <div class="brand-chip">Isuzu</div>
-    <div class="brand-chip">Force Motors</div>
-    <div class="brand-chip">& More</div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
+<!-- ═══ BRANDS ═══ -->
 <section>
-  <div class="section-tag">Reviews</div>
-  <div class="section-title">HAPPY CUSTOMERS</div>
-  <div class="section-sub">Hazaron satisfied customers ka bharosa — unki khaani, unhi ke shabdon mein.</div>
-  <div class="testimonials-grid">
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Trust PDI ke experts ne meri nai Tata Nexon ki inspection ki aur 2 major paint panel issues pehle hi dhundh diye. Dealer ne delivery se pehle sab theek kiya. Bahut hi professional service!"</p>
-      <div class="testi-author">
-        <div class="author-avatar">RK</div>
-        <div>
-          <div class="author-name">Rahul Kumar</div>
-          <div class="author-car">Tata Nexon, Delhi</div>
-        </div>
-      </div>
+  <div class="container">
+    <div class="tag">We Cover</div>
+    <div class="sec-h">ALL MAJOR CAR BRANDS</div>
+    <div class="brands-grid">
+      <div class="brand-chip">Maruti Suzuki</div><div class="brand-chip">Hyundai</div><div class="brand-chip">Tata Motors</div><div class="brand-chip">Mahindra</div><div class="brand-chip">Honda</div><div class="brand-chip">Toyota</div><div class="brand-chip">KIA</div><div class="brand-chip">MG Motors</div><div class="brand-chip">Skoda</div><div class="brand-chip">Volkswagen</div><div class="brand-chip">Renault</div><div class="brand-chip">Nissan</div><div class="brand-chip">Jeep</div><div class="brand-chip">Citroen</div><div class="brand-chip">BMW</div><div class="brand-chip">Mercedes</div><div class="brand-chip">Audi</div><div class="brand-chip">Land Rover</div><div class="brand-chip">Jaguar</div><div class="brand-chip">Isuzu</div><div class="brand-chip">Force Motors</div><div class="brand-chip">&amp; More</div>
     </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"WhatsApp pe booking itni aasaan thi! Expert time pe aya, full inspection ki aur detailed report WhatsApp pe send ki. Meri Hyundai Creta bilkul perfect nikli. Highly recommended!"</p>
-      <div class="testi-author">
-        <div class="author-avatar">PS</div>
-        <div>
-          <div class="author-name">Priya Sharma</div>
-          <div class="author-car">Hyundai Creta, Noida</div>
-        </div>
-      </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section style="background:var(--bg2)">
+  <div class="container">
+    <div class="tag">Reviews</div>
+    <div class="sec-h">WHAT OUR CUSTOMERS SAY</div>
+    <p class="sec-sub">Hundreds of verified customers trust Trust PDI every month. Here's what they say.</p>
+    <div class="testi-grid">
+      <div class="testi-card fi"><div class="stars">★★★★★</div><p class="testi-text">"Trust PDI found 2 major paint panel issues on my new Tata Nexon before delivery. The dealer fixed everything on the spot. Extremely professional and worth every rupee!"</p><div class="testi-who"><div class="avatar">RK</div><div><div class="who-name">Rahul Kumar</div><div class="who-car">Tata Nexon · Delhi</div></div></div></div>
+      <div class="testi-card fi"><div class="stars">★★★★★</div><p class="testi-text">"WhatsApp booking was super easy! Expert arrived on time, full inspection done and detailed report on WhatsApp within minutes. My Hyundai Creta was perfect. Highly recommended!"</p><div class="testi-who"><div class="avatar">PS</div><div><div class="who-name">Priya Sharma</div><div class="who-car">Hyundai Creta · Noida</div></div></div></div>
+      <div class="testi-card fi"><div class="stars">★★★★★</div><p class="testi-text">"For ₹2499 they saved me from a ₹1 lakh engine problem! My Maruti Swift had an ECU fault the dealer had hidden. Trust PDI is a lifesaver — thank you!"</p><div class="testi-who"><div class="avatar">AV</div><div><div class="who-name">Amit Verma</div><div class="who-car">Maruti Swift · Gurgaon</div></div></div></div>
+      <div class="testi-card fi"><div class="stars">★★★★★</div><p class="testi-text">"Professional team, honest report and zero pressure. Inspected my KIA Seltos and identified scratches that were replaced before delivery. Genuine 5-star service!"</p><div class="testi-who"><div class="avatar">NS</div><div><div class="who-name">Neha Singh</div><div class="who-car">KIA Seltos · Faridabad</div></div></div></div>
     </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"₹2499 mein itni detailed inspection — ek lakh rupaye ke engine problem se bachaya inhoone. Meri Maruti Swift ka ECU error tha jo dealer ne chupaaya tha. Shukriya Trust PDI!"</p>
-      <div class="testi-author">
-        <div class="author-avatar">AV</div>
-        <div>
-          <div class="author-name">Amit Verma</div>
-          <div class="author-car">Maruti Swift, Gurgaon</div>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Professional team, honest report aur zero pressure. Inhoone meri KIA Seltos ki inspection ki aur minor scratches identify kiye jo replace karwaye. 5/5 service!"</p>
-      <div class="testi-author">
-        <div class="author-avatar">NS</div>
-        <div>
-          <div class="author-name">Neha Singh</div>
-          <div class="author-car">KIA Seltos, Faridabad</div>
-        </div>
+  </div>
+</section>
+
+<!-- ═══ BOOKING ═══ -->
+<section id="book" class="booking-section">
+  <div class="container">
+    <div class="tag" style="justify-content:center;color:var(--wa)">Book Now</div>
+    <div class="sec-h" style="text-align:center">BOOK YOUR INSPECTION<br>ON WHATSAPP</div>
+    <p class="sec-sub" style="margin:0 auto;text-align:center">Just message us — our certified expert will arrive directly at your showroom!</p>
+    <div class="book-box">
+      <div style="font-size:15.5px;font-weight:700;margin-bottom:5px">📱 Direct WhatsApp Booking</div>
+      <div style="color:var(--muted2);font-size:13.5px">Click below — we reply instantly</div>
+      <a href="https://wa.me/918744911716?text=Hello%20Trust%20PDI!%0AI%20want%20to%20book%20a%20PDI.%0ACar%20Model:%0ADelivery%20Date:%0AShowroom%20Location:%0ACity:" class="wa-btn-big" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        +91 8744911716 — WhatsApp Now
+      </a>
+      <div class="or-divider">or call us directly</div>
+      <div class="quick-btns">
+        <a href="tel:+918744911716" class="q-btn">📞 Call Now</a>
+        <a href="https://wa.me/918744911716?text=I%20need%20more%20information%20about%20PDI." class="q-btn" target="_blank" rel="noopener">ℹ️ More Info</a>
+        <a href="#contact" class="q-btn">📋 Send Message</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHATSAPP BOOKING -->
-<section class="booking-section" id="book">
-  <div class="section-tag" style="color:var(--wa);">Book Now</div>
-  <div class="section-title">BOOK YOUR PDI ON WHATSAPP</div>
-  <div class="section-sub" style="margin:0 auto;text-align:center;">Sirf WhatsApp karo aur hamar expert seedha showroom pe aayega!</div>
-  <div class="wa-box">
-    <div style="font-size:16px;font-weight:600;margin-bottom:6px;">📱 Direct WhatsApp Booking</div>
-    <div style="color:var(--muted);font-size:14px;">Click karein — hum turant reply karenge</div>
-    <a href="https://wa.me/919540859096?text=Hello%20Trust%20PDI%21%20%0AMujhe%20Car%20PDI%20book%20karna%20hai.%20%0ACar%20Model%3A%20%0ADelivery%20Date%3A%20%0AShowroom%20Location%3A%20%0ACity%3A" 
-       class="wa-btn" target="_blank" rel="noopener">
-      <span class="wa-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </span>
-      +91 9540859096 — WhatsApp Karo
-    </a>
-    <div class="or-divider">ya seedha call karein</div>
-    <div class="quick-links">
-      <a href="tel:+919540859096" class="quick-link">📞 Call Now</a>
-      <a href="https://wa.me/919540859096?text=Mujhe%20PDI%20ke%20baare%20mein%20jankari%20chahiye." class="quick-link" target="_blank">ℹ️ More Info</a>
-      <a href="#contact" class="quick-link">📋 Send Message</a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact-section">
-  <div class="section-tag">Get In Touch</div>
-  <div class="section-title">CONTACT US</div>
-  <div class="contact-grid">
-    <div class="contact-info">
-      <div class="contact-item">
-        <div class="contact-ico">📱</div>
-        <div>
-          <h4>WhatsApp / Call</h4>
-          <a href="https://wa.me/919540859096" target="_blank">+91 9540859096</a>
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" style="background:var(--bg2)">
+  <div class="container">
+    <div class="tag">Get In Touch</div>
+    <div class="sec-h">CONTACT US</div>
+    <div class="contact-grid">
+      <div class="c-info-stack">
+        <div class="c-card"><div class="c-ico">📱</div><div><h4>WhatsApp / Call</h4><a href="https://wa.me/918744911716" target="_blank" rel="noopener">+91 8744911716</a></div></div>
+        <div class="c-card"><div class="c-ico">⏰</div><div><h4>Working Hours</h4><p>Monday – Saturday: 10 AM – 6:30 PM</p></div></div>
+        <div class="c-card"><div class="c-ico">📍</div><div><h4>Service Area</h4><p>Delhi NCR, Haryana, Uttar Pradesh &amp; Beyond</p></div></div>
+        <div class="c-card"><div class="c-ico">💰</div><div><h4>Pricing</h4><p>Starting @ ₹1,999/- <span style="color:var(--muted2);font-size:12px;font-weight:400">(T&amp;C Apply)</span></p></div></div>
+        <div class="c-card" style="align-items:center">
+          <div style="width:52px;height:52px;border-radius:13px;background:linear-gradient(135deg,var(--blue-d),var(--blue));display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0">👨‍🔧</div>
+          <div>
+            <div style="font-size:14px;font-weight:700;margin-bottom:3px">Expert at Your Doorstep</div>
+            <div style="font-size:12.5px;color:var(--muted);line-height:1.65">Our certified PDI technician comes directly to your showroom — no travel required from your side.</div>
+          </div>
         </div>
       </div>
-      <div class="contact-item">
-        <div class="contact-ico">⏰</div>
-        <div>
-          <h4>Working Hours</h4>
-          <p>Monday – Saturday: 10AM – 6:30PM</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-ico">📍</div>
-        <div>
-          <h4>Serving Areas</h4>
-          <p>Delhi NCR, Haryana, UP & More</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-ico">💰</div>
-        <div>
-          <h4>Pricing</h4>
-          <p>Starting @ ₹2,499/- only (T&C Apply)</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="contact-form">
-        <div class="form-group">
-          <label>Aapka Naam</label>
-          <input type="text" placeholder="Full Name likhein" id="fname">
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="+91 XXXXX XXXXX" id="fphone">
-        </div>
-        <div class="form-group">
-          <label>Car Brand & Model</label>
+      <div class="cform">
+        <div class="fg"><label>Your Name</label><input type="text" placeholder="Enter your full name" id="fname" autocomplete="name"></div>
+        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXX XXXXX" id="fphone" autocomplete="tel"></div>
+        <div class="fg">
+          <label>Car Brand</label>
           <select id="fbrand">
-            <option value="">-- Car Select Karein --</option>
-            <option>Maruti Suzuki</option><option>Hyundai</option>
-            <option>Tata Motors</option><option>Mahindra</option>
-            <option>Honda</option><option>Toyota</option>
-            <option>KIA</option><option>MG</option>
-            <option>Skoda</option><option>Volkswagen</option>
-            <option>BMW</option><option>Mercedes</option>
+            <option value="">-- Select Car Brand --</option>
+            <option>Maruti Suzuki</option><option>Hyundai</option><option>Tata Motors</option>
+            <option>Mahindra</option><option>Honda</option><option>Toyota</option>
+            <option>KIA</option><option>MG Motors</option><option>Skoda</option>
+            <option>Volkswagen</option><option>BMW</option><option>Mercedes</option>
             <option>Audi</option><option>Other</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>City / Showroom Location</label>
-          <input type="text" placeholder="Showroom ka city aur location" id="fcity">
-        </div>
-        <div class="form-group">
-          <label>Message (Optional)</label>
-          <textarea placeholder="Koi aur information share karna chahte ho?" id="fmsg"></textarea>
-        </div>
-        <button class="form-submit" onclick="sendWhatsApp()">
-          📤 WhatsApp Pe Send Karein
-        </button>
+        <div class="fg"><label>City / Showroom Location</label><input type="text" placeholder="City and showroom name" id="fcity"></div>
+        <div class="fg"><label>Message (Optional)</label><textarea placeholder="Any other details you'd like to share?" id="fmsg"></textarea></div>
+        <button class="form-submit" onclick="sendWA()">📤 Send via WhatsApp</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══ FOOTER ═══ -->
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo-box" style="text-decoration:none;">
-        <div class="logo-icon" style="width:40px;height:40px;font-size:17px;">PDI</div>
-        <div class="logo-text">
-          <div class="logo-name" style="font-size:22px;">TRUST PDI</div>
-          <div class="logo-sub">Pre-Delivery Inspection</div>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#home" class="logo" aria-label="Trust PDI">
+          <img src="data:image/jpeg;base64,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n/Wdd53N31HWdd53N31A3A2m+Un2l2k7UNPus67zubvqOs67zubvqBuDtN8pBtJycn2mn3Wdd53N31HWdd53N31CNwttvahdpvlIaedZ13nc3fUvWlf53N31CtwtpPKQu03yk+00760r/O5u+o60r/O5u+oG4m03tQbacnIad9aV/nc3fUdaV/nc3fUDcVHt8pPtLtN8pPtNOetK/wA7m76l60r/ADyfvqNDcXab5SDab5SGnXWlf55P31HWlf55P31A3F2m+Un2jaTtT7TTrrSv88n76jrSv88n76gbjbTe1PtG03ykNOetK/zyfvqOtK/zyfvqNDcbab5SfaNpvlJ9ppx1pX+eTd9S9aV/nk/fUDcbab5SEy3yk+00660r/PJ++o60r/PJ++oG4203ykJtN8pDTrrSv88n76jrSv8APJ++o0NxdtvlJ9pdtvahpz1pX+eT99R1pX+eT99QNxdtufjJ9o2k8pPtNOutK/zyfvqOtK/zyfvqBuLtN8pPtG03ykNOutK/zyfvqOtK/wA8n76hG4m03ykG0nahp31pX+eT99R1pX+dzd9QrcPbb5SfaNpvahp31pX+dzd9R1pX+dzd9QNxNpvahNpvlJ9pp51pX+dzd9R1pX+dzd9QNw9pvlINtvan2mnnWlf53N31HWdd53N31A3C2m+Un2k2m+Uhp91nXedzd9R1nXedzd9QNwdpvahNpvlIaf8AWdd53N31HWdd53N31A3A2m9qfaTaTykNQOs67zubvqOs67zubvqBt9tN8pBtN8pDUHrOu87m76jrOu87m76gbe7Te1PtJtNz8ZPtNQ+s67zubvqOs67zubvqBt5tt8pBtN8pDUPrOu87m76jrOu87m76gbebTe1CZbnin2monWdd53N31HWdd53N31A272m+UhNpvlIai9ZV3nc3fUdZV3nc3fUI252m8nIZbTcfGQ1D6zrvO5u+pes67zubvqUbd7Te1CK5vlIai9Z13nc3fUdZ13nc3fUJptyrm+UhjtNTmhqR1lXedzd9R1lXedzd9QrbjLe1BtN7UNR+sq7zubvqOsq7zubvqBtxtJ2oNpO1DUfrKu87m76jrKu87m76hNNuNpvan2k2m+UhqR1nXedzd9SdZ13nc3fUK252m9qDab2oajdZ13nc3fUdZ13nc3fUDbnab2oNpvahqN1nXedzd9R1nXedzd9QNudpvagNR+sq7zubvqAP/9k=" alt="Trust PDI" width="52" height="52">
+        </a>
+        <p>We verify every aspect of your new car before delivery — India's most trusted PDI service across Delhi NCR and beyond.</p>
+        <div class="socials">
+          <a href="https://wa.me/918744911716" class="soc" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="tel:+918744911716" class="soc" aria-label="Call">📞</a>
         </div>
       </div>
-      <p>Aapki nai car ki delivery se pehle hum har cheez verify karte hain. India ka sabse trusted PDI service.</p>
-      <div class="social-links">
-        <a href="https://wa.me/919540859096" class="social-link" target="_blank" title="WhatsApp">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </a>
-        <a href="tel:+919540859096" class="social-link" title="Call">📞</a>
-      </div>
+      <div class="fcol"><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div class="fcol"><h4>Services</h4><ul><li><a href="#services">Engine Check</a></li><li><a href="#services">Paint Diagnosis</a></li><li><a href="#services">Electronics Scan</a></li><li><a href="#services">Body Inspection</a></li><li><a href="#services">Tyre &amp; Battery</a></li></ul></div>
+      <div class="fcol"><h4>Contact</h4><ul><li><a href="https://wa.me/918744911716" target="_blank" rel="noopener">WhatsApp: 8744911716</a></li><li><a href="tel:+918744911716">Call: +91 8744911716</a></li><li><a href="#contact">Send Message</a></li><li><a href="#book">Book PDI</a></li></ul></div>
     </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#services">Engine Check</a></li>
-        <li><a href="#services">Paint Diagnosis</a></li>
-        <li><a href="#services">Electronics Scan</a></li>
-        <li><a href="#services">Body Inspection</a></li>
-        <li><a href="#services">Tyre & Battery</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="https://wa.me/919540859096" target="_blank">WhatsApp: 9540859096</a></li>
-        <li><a href="tel:+919540859096">Call: +91 9540859096</a></li>
-        <li><a href="#contact">Send Message</a></li>
-        <li><a href="#book">Book PDI</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2023 Trust PDI. All Rights Reserved.</p>
-    <div style="display:flex;gap:20px;">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms & Conditions</a>
+    <div class="foot-bottom">
+      <p>© 2025 Trust PDI. All Rights Reserved.</p>
+      <div class="foot-links"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-  function sendWhatsApp() {
-    const name = document.getElementById('fname').value || 'Customer';
-    const phone = document.getElementById('fphone').value || 'N/A';
-    const brand = document.getElementById('fbrand').value || 'Not selected';
-    const city = document.getElementById('fcity').value || 'N/A';
-    const msg = document.getElementById('fmsg').value || '';
-    const text = `Hello Trust PDI! 🚗\n\nMujhe PDI book karni hai.\n\n👤 Naam: ${name}\n📱 Phone: ${phone}\n🚗 Car Brand: ${brand}\n📍 City/Showroom: ${city}\n💬 Message: ${msg}\n\nKripya mujhe call ya reply karein. Dhanyawad!`;
-    window.open('https://wa.me/919540859096?text=' + encodeURIComponent(text), '_blank');
-  }
+// ── Mobile Nav ──
+function toggleNav(){
+  const h=document.getElementById('ham');
+  const m=document.getElementById('mobmenu');
+  h.classList.toggle('open');
+  const open=h.classList.contains('open');
+  m.style.display=open?'flex':'none';
+  document.body.style.overflow=open?'hidden':'';
+}
+function closeMob(){
+  document.getElementById('ham').classList.remove('open');
+  document.getElementById('mobmenu').style.display='none';
+  document.body.style.overflow='';
+}
+// close on outside click
+document.addEventListener('click',function(e){
+  const m=document.getElementById('mobmenu');
+  const h=document.getElementById('ham');
+  if(m.style.display==='flex'&&!m.contains(e.target)&&!h.contains(e.target)){closeMob()}
+});
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
+// ── Smooth scroll ──
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+  const t=document.querySelector(a.getAttribute('href'));
+  if(t){e.preventDefault();closeMob();setTimeout(()=>t.scrollIntoView({behavior:'smooth'}),60)}
+}));
 
-  // Fade-in animation on scroll
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
+// ── WhatsApp Form ──
+function sendWA(){
+  const n=document.getElementById('fname').value.trim()||'Customer';
+  const p=document.getElementById('fphone').value.trim()||'N/A';
+  const b=document.getElementById('fbrand').value||'Not selected';
+  const c=document.getElementById('fcity').value.trim()||'N/A';
+  const m=document.getElementById('fmsg').value.trim()||'—';
+  const t=`Hello Trust PDI! 🚗\n\nI would like to book a Car PDI.\n\n👤 Name: ${n}\n📱 Phone: ${p}\n🚗 Car Brand: ${b}\n📍 City/Showroom: ${c}\n💬 Message: ${m}\n\nPlease get in touch. Thank you!`;
+  window.open('https://wa.me/918744911716?text='+encodeURIComponent(t),'_blank');
+}
 
-  document.querySelectorAll('.feat-card, .svc-card, .testi-card, .step, .cp-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
+// ── Scroll fade-in ──
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}
+}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fi').forEach((el,i)=>{
+  el.style.transitionDelay=(i%4*0.08)+'s';
+  obs.observe(el);
+});
+
+// ── Keyboard nav for hamburger ──
+document.getElementById('ham').addEventListener('keydown',function(e){
+  if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleNav()}
+});
 </script>
 </body>
 </html>
